@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_home" android:title="@string/home" android:icon="@drawable/baseline_home_24"/>
+    <item android:id="@+id/nav_science" android:title="@string/science" android:icon="@drawable/science_24dp_1f1f1f_fill0_wght400_grad0_opsz24"/>
+    <item android:id="@+id/nav_sports" android:title="@string/sports" android:icon="@drawable/sports_cricket_24dp_1f1f1f_fill0_wght400_grad0_opsz24"/>
+    <item android:id="@+id/nav_health" android:title="@string/health" android:icon="@drawable/health_cross_24dp_1f1f1f_fill0_wght400_grad0_opsz24"/>
+    <item android:id="@+id/nav_entertainment" android:title="@string/entertainment" android:icon="@drawable/music_note_24dp_1f1f1f_fill0_wght400_grad0_opsz24"/>
+
+
+
+</menu>
