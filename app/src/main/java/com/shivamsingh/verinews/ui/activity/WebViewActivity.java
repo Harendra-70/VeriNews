@@ -1,4 +1,4 @@
-package com.shivamsingh;
+package com.shivamsingh.verinews.ui.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;

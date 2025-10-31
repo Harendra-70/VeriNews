@@ -1,4 +1,4 @@
-import com.android.build.gradle.internal.testing.screenshot.PROPERTIES
+
 import java.io.FileInputStream
 import java.util.Properties
 
@@ -32,6 +32,7 @@ android {
 
     buildFeatures{
         buildConfig=true
+        viewBinding=true
     }
     buildTypes {
         release {
@@ -43,8 +44,10 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+
     }
 }
 
@@ -67,4 +70,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    implementation(libs.androidx.swiperefreshlayout)
 }

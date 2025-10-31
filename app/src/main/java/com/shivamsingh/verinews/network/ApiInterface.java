@@ -1,4 +1,6 @@
-package com.shivamsingh;
+package com.shivamsingh.verinews.network;
+
+import com.shivamsingh.verinews.model.NewsArticle;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -8,7 +10,7 @@ public interface ApiInterface {
 
     // Base URL for the News API
     // All requests will be relative to this URL
-     String BASE_URL = "https://newsapi.org/v2/";
+    String BASE_URL = "https://newsapi.org/v2/";
 
     /**
      * Get top headlines for a specified country.

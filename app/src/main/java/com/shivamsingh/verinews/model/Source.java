@@ -1,4 +1,5 @@
-package com.shivamsingh;
+package com.shivamsingh.verinews.model;
+
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

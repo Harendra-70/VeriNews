@@ -1,4 +1,4 @@
-package com.shivamsingh;
+package com.shivamsingh.verinews.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -7,7 +7,8 @@ import java.util.ArrayList;
 
 public class NewsArticle {
     @SerializedName("status")//Use @SerializedName to match JSON keys to fields (required if names differ).
-    @Expose     // If you have fields without @Expose, they won't be included when using excludeFieldsWithoutExposeAnnotation()
+    @Expose
+    // If you have fields without @Expose, they won't be included when using excludeFieldsWithoutExposeAnnotation()
     private String status;
     @SerializedName("totalResults")
     @Expose

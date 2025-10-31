@@ -1,4 +1,4 @@
-package com.shivamsingh;
+package com.shivamsingh.verinews.network;
 
 import androidx.multidex.BuildConfig;
 
@@ -71,29 +71,3 @@ public class ApiUtilities {
         return retrofit.create(ApiInterface.class);
     }
 }
-
-/*
- When you call .excludeFieldsWithoutExposeAnnotation(), Gson ignores any fields that do NOT have the @Expose annotation.
- This is useful for controlling which fields you want included in your JSON parsing, especially if your model class has some fields you don’t want to send or receive.
-*/
-
-
-
-/*
-package com.shivamsingh;
-
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
-public class ApiUtilities {
-
-    public static Retrofit retrofit=null;
-
-    public static ApiInterface getApiInterface(){
-        if(retrofit==null){
-            retrofit=new Retrofit.Builder().baseUrl(ApiInterface.BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
-        }
-        return retrofit.create(ApiInterface.class);
-    }
-}
-*/

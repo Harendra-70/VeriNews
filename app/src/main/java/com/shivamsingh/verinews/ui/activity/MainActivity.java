@@ -1,4 +1,4 @@
-package com.shivamsingh.verinews;
+package com.shivamsingh.verinews.ui.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -12,11 +12,12 @@ import androidx.fragment.app.FragmentTransaction;
 
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.shivamsingh.EntertainmentFragment;
-import com.shivamsingh.HealthFragment;
-import com.shivamsingh.HomeFragment;
-import com.shivamsingh.ScienceFragment;
-import com.shivamsingh.SportsFragment;
+import com.shivamsingh.verinews.R;
+import com.shivamsingh.verinews.ui.fragment.EntertainmentFragment;
+import com.shivamsingh.verinews.ui.fragment.HealthFragment;
+import com.shivamsingh.verinews.ui.fragment.HomeFragment;
+import com.shivamsingh.verinews.ui.fragment.ScienceFragment;
+import com.shivamsingh.verinews.ui.fragment.SportsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -140,11 +141,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.shivamsingh.EntertainmentFragment;
-import com.shivamsingh.HealthFragment;
-import com.shivamsingh.HomeFragment;
-import com.shivamsingh.ScienceFragment;
-import com.shivamsingh.SportsFragment;
+import com.shivamsingh.verinews.ui.fragment.EntertainmentFragment;
+import com.shivamsingh.verinews.ui.fragment.HealthFragment;
+import com.shivamsingh.verinews.ui.fragment.HomeFragment;
+import com.shivamsingh.verinews.ui.fragment.ScienceFragment;
+import com.shivamsingh.verinews.ui.fragment.SportsFragment;
 
 
 public class MainActivity extends AppCompatActivity {
