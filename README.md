@@ -19,11 +19,13 @@ A modern Android news application that fetches and displays the latest news arti
 
 ## Screenshots 📱
 
-<img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/4a0f6ac4-f85b-475b-a161-cd1656e96dff" />
+<img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/2c05dda9-ff1a-4db0-ba40-abb9b72d2984" />
 
 <img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/9b20744f-45a5-4707-8315-fe9c9d0309e9" />
 
 <img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/26389bdc-bb82-46e0-85d8-9f0243e8f3f6" />
+
+<img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/4a0f6ac4-f85b-475b-a161-cd1656e96dff" />
 
 <img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/29c2b002-9639-4bfa-94df-eade0f5b938d" />
 
