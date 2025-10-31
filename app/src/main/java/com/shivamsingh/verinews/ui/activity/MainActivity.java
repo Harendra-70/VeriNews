@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.shivamsingh.verinews.R;
+import com.shivamsingh.verinews.databinding.ActivityMainBinding;
 import com.shivamsingh.verinews.ui.fragment.EntertainmentFragment;
 import com.shivamsingh.verinews.ui.fragment.HealthFragment;
 import com.shivamsingh.verinews.ui.fragment.HomeFragment;
@@ -21,22 +22,22 @@ import com.shivamsingh.verinews.ui.fragment.SportsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private  Fragment homeFragment = new HomeFragment();
-    private  Fragment scienceFragment = new ScienceFragment();
-    private  Fragment sportsFragment = new SportsFragment();
-    private  Fragment healthFragment = new HealthFragment();
-    private  Fragment entertainmentFragment = new EntertainmentFragment();
+    private Fragment homeFragment = new HomeFragment();
+    private Fragment scienceFragment = new ScienceFragment();
+    private Fragment sportsFragment = new SportsFragment();
+    private Fragment healthFragment = new HealthFragment();
+    private Fragment entertainmentFragment = new EntertainmentFragment();
 
     private Fragment activeFragment;
 
     private BottomNavigationView bottomNavigationView;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        bottomNavigationView = findViewById(R.id.bottomNav);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         if (savedInstanceState == null) {
             // This block runs ONLY the very first time the Activity is created
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             entertainmentFragment = fm.findFragmentByTag("entertainment");
         }
 
-        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
+        binding.bottomNav.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
@@ -95,19 +96,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        bottomNavigationView.setSelectedItemId(R.id.nav_home);
+        binding.bottomNav.setSelectedItemId(R.id.nav_home);
 
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
                 if (activeFragment != homeFragment) {
-                    bottomNavigationView.setSelectedItemId(R.id.nav_home);
+                    binding.bottomNav.setSelectedItemId(R.id.nav_home);
                 } else {
                     finish();
                 }
             }
         });
     }
+
     private void switchFragment(Fragment targetFragment) {
         if (activeFragment != targetFragment) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -118,6 +120,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        binding = null; // prevent memory leaks
+    }
 
 }
 
