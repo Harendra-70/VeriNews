@@ -19,15 +19,17 @@ A modern Android news application that fetches and displays the latest news arti
 
 ## Screenshots 📱
 
-<img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/2c05dda9-ff1a-4db0-ba40-abb9b72d2984" />
+<img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/1a3f3b2d-5009-4270-b6b0-4896f169f177" />
 
-<img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/9b20744f-45a5-4707-8315-fe9c9d0309e9" />
+<img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/430bdb49-46db-4680-869b-e595cfb2ee48" />
 
-<img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/26389bdc-bb82-46e0-85d8-9f0243e8f3f6" />
+<img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/2d50747f-d6e7-4b4b-97be-4d6b941c49e3" />
 
-<img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/4a0f6ac4-f85b-475b-a161-cd1656e96dff" />
+<img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/d6c77f3a-0ba6-43a4-b85f-e5fc19d494ee" />
 
-<img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/29c2b002-9639-4bfa-94df-eade0f5b938d" />
+<img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/3fa8fa5e-7918-46f5-a2f4-84e3081662b4" />
+
+<img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/2d934781-e657-46c8-ba43-b707aa9e00fa" />
 
 ## Architecture 🏗️
 
