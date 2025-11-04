@@ -22,10 +22,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     Context context;
     ArrayList<Model> arrayList;
+    String categoryTitle;
 
-    public Adapter(Context context, ArrayList<Model> arrayList) {
+    public Adapter(Context context, ArrayList<Model> arrayList,String categoryTitle) {
         this.context = context;
         this.arrayList = arrayList;
+        this.categoryTitle=categoryTitle;
     }
 
     @Override
@@ -59,6 +61,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
                 Intent intent=new Intent(context, WebViewActivity.class);
                 intent.putExtra("url",arrayList.get(currentPosition).getUrl());
+                intent.putExtra("title", categoryTitle);
                 context.startActivity(intent);
             }
         });

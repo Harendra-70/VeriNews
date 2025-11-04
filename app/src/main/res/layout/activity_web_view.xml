@@ -9,18 +9,30 @@
     android:orientation="vertical"
     tools:context=".ui.activity.WebViewActivity">
 
-    <WebView
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/webView"/>
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorSurface"
+        app:titleTextColor="?attr/colorOnSurface"
+        app:navigationIconTint="?attr/colorOnSurface"
+        app:navigationIcon="@drawable/arrow_back_24dp_1f1f1f_fill0_wght400_grad0_opsz24" />
 
-    <!-- ProgressBar overlay -->
+    <!-- Progress Bar -->
     <ProgressBar
         android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:max="100"
+        android:progressTint="?attr/colorSecondary"
         android:visibility="gone" />
+
+    <!-- WebView -->
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

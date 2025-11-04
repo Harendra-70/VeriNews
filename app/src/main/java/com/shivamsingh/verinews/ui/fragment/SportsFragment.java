@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.shivamsingh.verinews.BuildConfig;
+import com.shivamsingh.verinews.R;
 import com.shivamsingh.verinews.adapter.Adapter;
 import com.shivamsingh.verinews.databinding.FragmentSportsBinding;
 import com.shivamsingh.verinews.model.Model;
@@ -36,7 +37,7 @@ public class SportsFragment extends Fragment {
         binding = FragmentSportsBinding.inflate(inflater, container, false);
 
         arrayList = new ArrayList<>();
-        adapter = new Adapter(getContext(), arrayList);
+        adapter = new Adapter(getContext(), arrayList,getString(R.string.sports));
         binding.sportsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.sportsRecyclerView.setAdapter(adapter);
 

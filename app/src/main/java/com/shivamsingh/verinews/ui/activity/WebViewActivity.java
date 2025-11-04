@@ -5,10 +5,10 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
@@ -17,7 +17,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.shivamsingh.verinews.R;
 import com.shivamsingh.verinews.databinding.ActivityWebViewBinding;
 
 public class WebViewActivity extends AppCompatActivity {
@@ -36,7 +35,23 @@ public class WebViewActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        String title = getIntent().getStringExtra("title");
 
+        // Set dynamic title on toolbar
+        binding.toolbar.setTitle(title);
+        // Set up toolbar
+        setSupportActionBar(binding.toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
+        binding.toolbar.setNavigationOnClickListener(v -> {
+            if (binding.webView.canGoBack()) {
+                binding.webView.goBack();
+            } else {
+                finish();
+            }
+        });
 
         binding.webView.getSettings().setJavaScriptEnabled(true);
         binding.webView.getSettings().setDomStorageEnabled(true); // enable local storage
@@ -60,18 +75,28 @@ public class WebViewActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onPageFinished(WebView view, String url) {
-                    binding.progressBar.setVisibility(View.GONE); // Hide progress bar
-                    super.onPageFinished(view, url);
-                }
-
-                @Override
                 public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                     view.loadUrl(request.getUrl().toString()); // Open links inside same WebView
                     return true; // Prevent opening in external browser
                 }
 
             });
+
+            // Add WebChromeClient for better progress tracking
+
+            binding.webView.setWebChromeClient(new WebChromeClient() {
+                @Override
+                public void onProgressChanged(WebView view, int newProgress) {
+                    binding.progressBar.setProgress(newProgress);
+                    if (newProgress == 100) {
+                        binding.progressBar.setVisibility(View.GONE);
+                    } else {
+                        binding.progressBar.setVisibility(View.VISIBLE);
+                    }
+                }
+
+            });
+
             binding.webView.loadUrl(fixedUrl);
         } else {
             Log.e("NewsApp", "URL is null!");
@@ -94,6 +119,6 @@ public class WebViewActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         binding.webView.destroy();
-        binding = null; // optional, to prevent leaks
+        binding = null; // to prevent leaks
     }
 }

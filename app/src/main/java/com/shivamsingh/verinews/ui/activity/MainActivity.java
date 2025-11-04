@@ -80,14 +80,19 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 if (id == R.id.nav_home) {
                     switchFragment(homeFragment);
+                    binding.toolbarTitle.setText(R.string.home);
                 } else if (id == R.id.nav_science) {
                     switchFragment(scienceFragment);
+                    binding.toolbarTitle.setText(R.string.science);
                 } else if (id == R.id.nav_sports) {
                     switchFragment(sportsFragment);
+                    binding.toolbarTitle.setText(R.string.sports);
                 } else if (id == R.id.nav_health) {
                     switchFragment(healthFragment);
+                    binding.toolbarTitle.setText(R.string.health);
                 } else if (id == R.id.nav_entertainment) {
                     switchFragment(entertainmentFragment);
+                    binding.toolbarTitle.setText(R.string.entertainment);
                 } else {
                     return false; // Unknown item → don't mark it as handled
                 }

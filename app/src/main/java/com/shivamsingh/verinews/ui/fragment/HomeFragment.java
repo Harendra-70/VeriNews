@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.shivamsingh.verinews.R;
 import com.shivamsingh.verinews.adapter.Adapter;
 import com.shivamsingh.verinews.databinding.FragmentHomeBinding;
 import com.shivamsingh.verinews.model.Model;
@@ -38,7 +39,7 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
 
         arrayList = new ArrayList<>();
-        adapter = new Adapter(getContext(), arrayList);
+        adapter = new Adapter(getContext(), arrayList,getString(R.string.home));
         binding.homeRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.homeRecyclerView.setAdapter(adapter);
 

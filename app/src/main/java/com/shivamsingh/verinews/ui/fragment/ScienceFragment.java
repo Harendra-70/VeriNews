@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.shivamsingh.verinews.R;
 import com.shivamsingh.verinews.adapter.Adapter;
 import com.shivamsingh.verinews.databinding.FragmentScienceBinding;
 import com.shivamsingh.verinews.model.Model;
@@ -38,7 +39,7 @@ public class ScienceFragment extends Fragment {
         binding=FragmentScienceBinding.inflate(inflater,container,false);
 
         arrayList = new ArrayList<>();
-        adapter = new Adapter(getContext(), arrayList);
+        adapter = new Adapter(getContext(), arrayList,getString(R.string.science));
         binding.scienceRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.scienceRecyclerView.setAdapter(adapter);
 
